@@ -1,0 +1,51 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+.idea/misc.xml
+/.idea/compiler.xml
+/.idea/gradle.xml
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/app/.gitignore
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.idea/*
+.reports/*
+/build/
+*.iml
+*.hprof
+/.app/class_files.txt
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/	
+
+# built application files
+*.apk
+*.ap_
+
+# Sonarlint plugin
+.idea/sonarlint
+
+# Android Studio
+/*/build/
+/*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.ipr
+*~
+*.swp

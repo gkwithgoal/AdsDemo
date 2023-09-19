@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.androidpro.adsdemo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.androidpro.adsdemo"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //ssp sdp
+//    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+//    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+    //loading dialog
+//    implementation 'com.yanzhenjie:loading:1.0.2'
+
+    //round image
+//    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //firebase
+//    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+//    implementation 'com.google.firebase:firebase-analytics'
+//    implementation 'com.google.firebase:firebase-auth'
+//    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+//    implementation 'com.google.firebase:firebase-firestore'
+//    implementation 'com.google.firebase:firebase-crashlytics'
+//
+    //retrofit
+//    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+//
+    implementation("com.github.khirr:Android-Foreground-Detection:1.0.1")
+//
+    //ads
+    implementation 'com.google.android.gms:play-services-ads:22.3.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.13.7'
+//    implementation 'com.ironsource.sdk:mediationsdk:7.3.0.1'
+//
+//    implementation 'com.google.android.gms:play-services-appset:16.0.2'
+//    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+//    implementation 'com.google.android.gms:play-services-basement:18.2.0'
+//
+//    implementation 'com.google.android.play:core:1.10.3'
+//    implementation 'com.google.android.play:review:2.0.1'
+//    implementation 'com.google.android.play:app-update:2.1.0'
+//
+//    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+//
+//    implementation 'com.android.billingclient:billing-ktx:6.0.1'
+//
+//    implementation 'com.github.myinnos:AndroidScratchCard:v1.0'
+}
