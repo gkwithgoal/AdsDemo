@@ -757,4 +757,154 @@ class CommonAdHelper {
             }.start()
         }
     }
+
+    /*fun loadAdmobInterRewardedAd() {
+            if (!checkForInternet(myApp.applicationContext) || !isAdmobEnabled || !admobInterRewardedEnabled || !admobInterRewardedMoreLoadTry || admobInterRewardedAd != null || isAdmobInterRewardedLoading) {
+                return
+            }
+
+            isAdmobInterRewardedLoading = true
+
+            val adRequest = AdRequest.Builder().build()
+
+            RewardedInterstitialAd.load(
+                myApp.applicationContext, admobInterRewardedId, adRequest,
+                object : RewardedInterstitialAdLoadCallback() {
+                    override fun onAdLoaded(rewardedInterstitialAd: RewardedInterstitialAd) {
+                        isAdmobInterRewardedLoading = false
+                        admobInterRewardedAd = rewardedInterstitialAd
+                        Log.d(TAG, "onAdLoaded:loadAdmobInterRewardedAd ====>")
+                    }
+
+                    override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                        Log.d(TAG, "onAdFailedToLoad:loadAdmobInterRewardedAd ====>" + loadAdError.message)
+                        isAdmobInterRewardedLoading = false
+                        admobInterRewardedAd = null
+                        admobInterRewardedMoreLoadTry = false
+
+                        if (!admobInterRewardedTimerRunning) {
+                            admobInterRewardedTimerRunning = true
+                            startTimerForAdEnable {
+                                Log.d(TAG, "onAdFailedToLoad:loadAdmobInterRewardedAd ====> true")
+                                admobInterRewardedMoreLoadTry = true
+                                admobInterRewardedTimerRunning = false
+                            }
+                        }
+                    }
+                })
+        }
+
+        fun showAdmobInterRewardedAd(
+            activity: Activity,
+            onAdClicked: (() -> Unit)? = null,
+            onAdDismiss: (() -> Unit)? = null,
+            onAdFailedToLoad: (() -> Unit)? = null,
+            onEarnedInterRewarded: (() -> Unit)? = null
+        ) {
+            if (admobInterRewardedAd != null) {
+                admobInterRewardedAd?.show(activity) {
+                    onEarnedInterRewarded?.invoke()
+                }
+
+                admobInterRewardedAd?.fullScreenContentCallback =
+                    object : FullScreenContentCallback() {
+                        override fun onAdClicked() {
+                            onAdClicked?.invoke()
+                        }
+
+                        override fun onAdDismissedFullScreenContent() {
+                            onAdDismiss?.invoke()
+                            admobInterRewardedAd = null
+                            loadAdmobInterRewardedAd()
+                        }
+
+                        override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                            Log.d(
+                                TAG,
+                                "onAdFailedToShowFullScreenContent:showAdmobInterRewardedAd ====>" + adError.message
+                            )
+                            onAdFailedToLoad?.invoke()
+                            admobInterRewardedAd = null
+                            loadAdmobInterRewardedAd()
+                        }
+                    }
+            } else {
+                loadAdmobInterRewardedAd()
+                onAdFailedToLoad?.invoke()
+            }
+        }*/
+
+    /*fun loadFbRewardedAd() {
+            if (!checkForInternet(myApp.applicationContext) || !isFbEnabled || !fbRewardedEnabled || !fbRewardedMoreLoadTry || fbRewardedAd != null || isFbRewardedLoading) {
+                return
+            }
+
+            isFbRewardedLoading = true
+
+            val rewardedVideoAd = RewardedVideoAd(myApp.applicationContext, fbRewardedId)
+
+            val rewardedVideoAdListener = object : RewardedVideoAdListener {
+                override fun onAdLoaded(ad: Ad) {
+                    isFbRewardedLoading = false
+                    fbRewardedAd = rewardedVideoAd
+                    Log.d(TAG, "onAdLoaded:loadFbRewardedAd ====>")
+                }
+
+                override fun onError(ad: Ad?, adError: com.facebook.ads.AdError) {
+                    Log.d(TAG, "onError:loadFbRewardedAd ====>" + adError.errorMessage)
+                    isFbRewardedLoading = false
+                    fbRewardedAd = null
+                    fbRewardedMoreLoadTry = false
+
+                    if (!fbRewardedTimerRunning) {
+                        fbRewardedTimerRunning = true
+                        startTimerForAdEnable {
+                            Log.d(TAG, "onError:loadFbRewardedAd ====> true")
+                            fbRewardedMoreLoadTry = true
+                            fbRewardedTimerRunning = false
+                        }
+                    }
+                }
+
+                override fun onAdClicked(ad: Ad) {
+                    onFbAdClicked?.invoke()
+                }
+
+                override fun onLoggingImpression(ad: Ad) {
+
+                }
+
+                override fun onRewardedVideoCompleted() {
+                    onFbEarnReward?.invoke()
+                    fbRewardedAd = null
+                    loadFbRewardedAd()
+                }
+
+                override fun onRewardedVideoClosed() {
+                    fbRewardedAd = null
+                    loadFbRewardedAd()
+                }
+            }
+
+            rewardedVideoAd.loadAd(
+                rewardedVideoAd.buildLoadAdConfig()
+                    .withAdListener(rewardedVideoAdListener)
+                    .build()
+            )
+        }
+
+        fun showFbRewardedAd(
+            onAdClicked: (() -> Unit)? = null,
+            onAdFailedToLoad: (() -> Unit)? = null,
+            onEarnReward: (() -> Unit)? = null
+        ) {
+            if (fbRewardedAd != null) {
+                onFbAdClicked = onAdClicked
+                onFbEarnReward = onEarnReward
+                fbRewardedAd?.show()
+            } else {
+                loadFbRewardedAd()
+                onAdFailedToLoad?.invoke()
+            }
+        }*/
 }
